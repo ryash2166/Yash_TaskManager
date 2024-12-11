@@ -39,7 +39,7 @@ const TaskForm = ({ initialValues, onSubmit }) => {
         <Input placeholder="Enter Title" />
       </Form.Item>
       <Form.Item label="Description" name="description">
-        <Input.TextArea />
+        <Input.TextArea placeholder="Enter the description" />
       </Form.Item>
       <Form.Item name="priority" label="Priority" rules={[{ required: true }]}>
         <Select placeholder="Select Priority">
