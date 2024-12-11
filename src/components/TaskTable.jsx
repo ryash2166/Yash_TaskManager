@@ -1,5 +1,6 @@
 import React from "react";
-import { Table, Button, Popconfirm, Tag } from "antd";
+import { Table, Button, Popconfirm, Tag, Tooltip } from "antd";
+import moment from "moment";
 
 const TaskTable = ({ tasks, loading, onEdit, onDelete }) => {
   const columns = [
@@ -12,6 +13,11 @@ const TaskTable = ({ tasks, loading, onEdit, onDelete }) => {
       title: "Description",
       dataIndex: "description",
       key: "description",
+      render: (description) => (
+        <span style={{ color: description ? "black" : "#bfbfbf" }}>
+          {description || "None"}
+        </span>
+      ),
     },
     {
       title: "Priority",
@@ -22,6 +28,27 @@ const TaskTable = ({ tasks, loading, onEdit, onDelete }) => {
       title: "Due Date",
       dataIndex: "dueDate",
       key: "dueDate",
+    },
+    {
+      title: "Days Left",
+      key: "daysLeft",
+      render: (record) => {
+        const today = moment();
+        const dueDate = moment(record.dueDate);
+        const daysLeft = dueDate.diff(today, "days");
+
+        let color = "black";
+        if (daysLeft <= 0) color = "red";
+        else if (daysLeft >= 1) color = "orange";
+
+        return (
+          <Tooltip title={daysLeft < 0 ? "Past Due" : `${daysLeft} days left`}>
+            <Tag color={color}>
+              {daysLeft < 0 ? "0 days left" : `${daysLeft} days left`}
+            </Tag>
+          </Tooltip>
+        );
+      },
     },
     {
       title: "Status",
