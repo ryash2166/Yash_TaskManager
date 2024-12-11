@@ -55,7 +55,7 @@ This Task Management App allows users to manage tasks effectively with features 
 6. **Preview Live Site:**
     You can preview the live site:
 
-    "https://yash-task-management-app.netlify.app/"
+    `https://yash-task-management-app.netlify.app/`
 
 ## Design Choices and Assumptions
 
