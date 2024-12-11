@@ -27,7 +27,7 @@ const TaskTable = ({ tasks, loading, onEdit, onDelete }) => {
       title: "Actions",
       key: "actions",
       render: (_, record) => (
-        <>
+        <div className="btn-table">
           <Button onClick={() => onEdit(record)}>Edit</Button>&nbsp;&nbsp;
           <Popconfirm
             title="Are you sure?"
@@ -35,7 +35,7 @@ const TaskTable = ({ tasks, loading, onEdit, onDelete }) => {
           >
             <Button danger>Delete</Button>
           </Popconfirm>
-        </>
+        </div>
       ),
     },
   ];
