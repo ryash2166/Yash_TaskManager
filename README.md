@@ -52,6 +52,10 @@ This Task Management App allows users to manage tasks effectively with features 
    You can preview the production build locally:
 
    "npm run preview"
+6. **Preview Live Site:**
+    You can preview the live site:
+
+    "https://yash-task-management-app.netlify.app/"
 
 ## Design Choices and Assumptions
 
