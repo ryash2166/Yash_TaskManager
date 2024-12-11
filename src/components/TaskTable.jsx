@@ -1,11 +1,17 @@
 import React from "react";
-import { Table, Button, Popconfirm, } from "antd";
+import { Table, Button, Popconfirm, Tag } from "antd";
+
 const TaskTable = ({ tasks, loading, onEdit, onDelete }) => {
   const columns = [
     {
       title: "Title",
       dataIndex: "title",
       key: "title",
+    },
+    {
+      title: "Description",
+      dataIndex: "description",
+      key: "description",
     },
     {
       title: "Priority",
@@ -21,7 +27,12 @@ const TaskTable = ({ tasks, loading, onEdit, onDelete }) => {
       title: "Status",
       dataIndex: "completed",
       key: "completed",
-      render: (completed) => (completed ? "Completed" : "Not Completed"),
+      render: (completed) =>
+        completed ? (
+          <Tag color="green">Completed</Tag>
+        ) : (
+          <Tag color="red">Not Completed</Tag>
+        ),
     },
     {
       title: "Actions",
