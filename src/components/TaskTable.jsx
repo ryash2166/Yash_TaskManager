@@ -26,7 +26,7 @@ const TaskTable = ({ tasks, loading, onEdit, onDelete }) => {
     {
       title: "Actions",
       key: "actions",
-      render: (_, record) => (
+      render: (record) => (
         <div className="btn-table">
           <Button onClick={() => onEdit(record)}>Edit</Button>&nbsp;&nbsp;
           <Popconfirm
