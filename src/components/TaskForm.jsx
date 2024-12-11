@@ -26,7 +26,6 @@ const TaskForm = ({ initialValues, onSubmit }) => {
     form.resetFields();
   };
 
- 
   return (
     <Form
       form={form}
@@ -39,11 +38,7 @@ const TaskForm = ({ initialValues, onSubmit }) => {
       <Form.Item name="title" label="Task Title" rules={[{ required: true }]}>
         <Input placeholder="Enter Title" />
       </Form.Item>
-      <Form.Item
-        label="Description"
-        name="description"
-        rules={[{ required: true, message: 'Please enter task description' }]}
-      >
+      <Form.Item label="Description" name="description">
         <Input.TextArea />
       </Form.Item>
       <Form.Item name="priority" label="Priority" rules={[{ required: true }]}>
