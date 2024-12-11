@@ -43,7 +43,7 @@ const App = () => {
 
   return (
     <div className="bg-black">
-      <h1 className='title'>Task Manager</h1>
+      <h1 className='title'>Task Management App</h1>
       <div className='btn'>
       <Button type="primary"  onClick={() => setIsModalVisible(true)}>Add Task</Button>
       </div>
